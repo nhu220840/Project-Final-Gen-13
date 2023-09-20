@@ -9,9 +9,9 @@ typedef struct{
     double GPA;
 } Student;
 
-int n;
-Student arr[1005];
-char foundID[100];
+extern int n;
+extern Student arr[1005];
+extern char foundID[100];
 
 void numberStudent();
 Student enterInformation();
@@ -21,7 +21,15 @@ Student getLowestGPA(Student arr[], int num);
 Student getHighestBPGrade(Student arr[], int num);
 void processGrade();
 void printLastName();
+
 void printOldestStudent();
+int compareAge(char date1[], char date2[]);
+Student findOldestStudent(Student arr[], int num);
+
+void search(Student arr[], int num, char studentID[]);
+void searchByID();
+void sortByGPA(Student arr[], int num);
+void printAfterSort();
 void run();
 
 #endif

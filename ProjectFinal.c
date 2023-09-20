@@ -6,6 +6,10 @@
 #include "main.h"
 #include "FindTheOldestStudent.h"
 
+int n;
+Student arr[1005];
+char foundID[100];
+
                 //Task 1: Enter student number
 void numberStudent(){
     printf("Enter student number: ");
@@ -114,11 +118,12 @@ void printLastName(){
     printf("\n");
 }
 
-// void printOldestStudent(){
-//     printf("The oldest student is: %s\n", findOldestStudent(arr, n).fullname);
-//     printf("Student ID: %d\n", findOldestStudent(arr, n).studentID);
-//     printf("Birthdate: %s\n\n", findOldestStudent(arr, n).birthdate);
-// }
+                //Task 7: Find the oldest student
+void printOldestStudent(){
+    printf("The oldest student is: %s\n", findOldestStudent(arr, n).fullname);
+    printf("Student ID: %s\n", findOldestStudent(arr, n).studentID);
+    printf("Birthdate: %s\n\n", findOldestStudent(arr, n).birthdate);
+}
 
                 //Task 9: Search by StudentID
 void search(Student arr[], int num, char studentID[]){
@@ -162,18 +167,17 @@ void printAfterSort(){
 void run(){
     numberStudent();
     enter();
-    printAsTable();
-    printToTextFile();
-    processGrade();
-    printLastName();
+    // printAsTable();
+    // printToTextFile();
+    // processGrade();
+    // printLastName();
 
-    //printOldestStudent();
-    searchByID(arr, n, foundID);
-    printAfterSort();
+    printOldestStudent();
+    // searchByID(arr, n, foundID);
+    // printAfterSort();
     
 }
 
 int main(){
     run();
-    
 }

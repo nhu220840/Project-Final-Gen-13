@@ -1,8 +1,8 @@
-#include "FindTheOldestStudent.h"
+#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include <math.h>
 
-int compareAge(char date1[], char date2[]){  
+void compareAge(char date1[], char date2[]){  
     char *d1 = strtok(date1, " ");
     char tmp1[100][100];
     int n1 = 0;
@@ -21,10 +21,12 @@ int compareAge(char date1[], char date2[]){
         d2 = strtok(NULL, "/. ");
     }
 
+    for(int i = 0; i < n1 - 1; i++){
+        printf("%s\n", tmp1[i]);
+    }
+
     for(int i = n1 - 1; i >= 0; i--){
-        int num1 = atoi(tmp1[i]);
-        int num2 = atoi(tmp2[i]);
-        if(num1 < num2){
+        if(strcmp(tmp1[i], tmp2[i]) < 0){
             return 1;
         }
     }
@@ -32,13 +34,7 @@ int compareAge(char date1[], char date2[]){
 }
 
 
-Student findOldestStudent(Student arr[], int num){
-    Student oldestStudent = arr[0];
-
-    for(int i = 0; i < num; i++){
-        if(compareAge(arr[i].birthdate, oldestStudent.birthdate) > 0){
-            oldestStudent = arr[i];
-        }
-    }
-    return oldestStudent;
+int main(){
+    // printf("%d", compareAge("22/8/2004", "15/2/2004"));
+    compareAge("22/8/2004", "15/2/2004");
 }
