@@ -38,10 +38,12 @@ void enter(){
 
                 //Task 3: Print student list as a table to screen
 void printTask3(Student x){
-    printf("Full name: %s\n", x.fullname);
-    printf("Student ID: %s\n", x.studentID);
-    printf("Birthdate: %s\n", x.birthdate);
-    printf("GPA: %.2lf\n\n", x.GPA);
+    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
+    printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", x.studentID, x.fullname, x.birthdate, x.Algebra, x.Calculus, x.BasicProgramming, x.GPA);
+    // printf("Full name: %s\n", x.fullname);
+    // printf("Student ID: %s\n", x.studentID);
+    // printf("Birthdate: %s\n", x.birthdate);
+    // printf("GPA: %.2lf\n\n", x.GPA);
 }
 
                 // Task 4: Print student list as a table to a text file
@@ -120,6 +122,26 @@ void searchByID(Student arr[], int num, char studentID[]){
 }
 
                 //Task 10: Sort the student list by GPA int descending order 
+void sortByGPA(Student arr[], int num){
+    for(int i = 0; i < num - 1; i++){
+        int min_pos = arr[i].GPA;
+        for(int j = i + 1; j < num; j++){
+            if(arr[j].GPA < arr[min_pos].GPA){
+                min_pos = j;
+            }
+        }
+        int tmp = arr[i].GPA;
+        arr[i].GPA = arr[min_pos].GPA;
+        arr[min_pos].GPA = tmp;
+    }
+}
+
+void printAfterSort(){
+    sortByGPA(arr, n);
+    for(int i = 0; i < n; i++){
+        printTask3(arr[i]);
+    }
+}
 
 void run(){
     numberStudent();
@@ -128,7 +150,8 @@ void run(){
     printLastName();
 
     //printOldestStudent();
-    searchByID(arr, n, "5");
+    //searchByID(arr, n, "5");
+    printAfterSort();
     
 }
 
