@@ -37,19 +37,29 @@ void enter(){
 }
 
                 //Task 3: Print student list as a table to screen
-void printTask3(Student x){
+void printToScr(Student x){
     printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
     printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", x.studentID, x.fullname, x.birthdate, x.Algebra, x.Calculus, x.BasicProgramming, x.GPA);
-    // printf("Full name: %s\n", x.fullname);
-    // printf("Student ID: %s\n", x.studentID);
-    // printf("Birthdate: %s\n", x.birthdate);
-    // printf("GPA: %.2lf\n\n", x.GPA);
+}
+
+void printAsTable(){
+    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
+    for(int i = 0; i < n; i++){
+        printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthdate, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
+    }
+    printf("\n");
 }
 
                 // Task 4: Print student list as a table to a text file
-// void printTask4(){
-    
-// }
+void printToTextFile(){
+    FILE *f;
+    f = fopen("List_of_Students.txt", "w");
+    fprintf(f, "%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
+    for(int i = 0; i < n; i++){
+        fprintf(f, "%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthdate, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
+    }
+    fclose(f);
+}
 
                 //Task 5: Process grades:
 Student getHighestGPA(Student arr[], int num){
@@ -113,7 +123,7 @@ void searchByID(Student arr[], int num, char studentID[]){
     int found = 0;
     for(int i = 0; i < num; i++){
         if(strcmp(studentID, arr[i].studentID) == 0){
-            printTask3(arr[i]);
+            printToScr(arr[i]);
             found = 1;
             break;
         }
@@ -138,14 +148,14 @@ void sortByGPA(Student arr[], int num){
 
 void printAfterSort(){
     sortByGPA(arr, n);
-    for(int i = 0; i < n; i++){
-        printTask3(arr[i]);
-    }
+    printAsTable();
 }
 
 void run(){
     numberStudent();
     enter();
+    printAsTable();
+    printToTextFile();
     processGrade();
     printLastName();
 
