@@ -1,4 +1,4 @@
 Student ID | Full name            | Birthdate  | Algebra    | Calculus   | Basic Programming    | GPA        |
-11a        | do nguyen gia nhu    | 22/8/2004  | 3.20       | 1.00       | 4.00                 | 2.73       |
-12a        | do nguyen gia bao    | 22/3       | 3.20       | 3.00       | 1.00                 | 2.40       |
-13a        | vu quang tung        | 4/1        | 4.00       | 2.00       | 1.00                 | 2.33       |
+22BA13248  | Do Nguyen Gia Nhu    | 22/8/2004  | 3.00       | 2.00       | 1.00                 | 2.00       |
+22BA13111  | Nguyen Hoang Nam     | 9/5/2003   | 4.00       | 2.00       | 1.00                 | 2.33       |
+22BA13222  | Do Bao               | 2/5/2007   | 4.00       | 3.30       | 2.00                 | 3.10       |

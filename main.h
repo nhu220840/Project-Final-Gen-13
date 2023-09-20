@@ -21,11 +21,8 @@ Student getLowestGPA(Student arr[], int num);
 Student getHighestBPGrade(Student arr[], int num);
 void processGrade();
 void printLastName();
-
 void printOldestStudent();
-int compareAge(char date1[], char date2[]);
-Student findOldestStudent(Student arr[], int num);
-
+void printYoungestStudent();
 void search(Student arr[], int num, char studentID[]);
 void searchByID();
 void sortByGPA(Student arr[], int num);

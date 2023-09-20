@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "main.h"
 #include "FindTheOldestStudent.h"
+#include "FindTheYoungestStudent.h"
 
 int n;
 Student arr[1005];
@@ -59,7 +60,7 @@ void printAsTable(){
 void printToTextFile(){
     FILE *f;
     f = fopen("List_of_Students.txt", "w");
-    printf("LIST OF STUDENTS B1\n\n");
+    fprintf(f, "LIST OF STUDENTS B1\n\n");
     fprintf(f, "%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
     for(int i = 0; i < n; i++){
         fprintf(f, "%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthdate, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
@@ -70,7 +71,7 @@ void printToTextFile(){
                 //Task 5: Process grades:
 Student getHighestGPA(Student arr[], int num){
     Student maxGPAStudent = arr[0];
-    for(int i = 0; i < num; i++){
+    for(int i = 1; i < num; i++){
         if(arr[i].GPA > maxGPAStudent.GPA)
             maxGPAStudent = arr[i];
     }
@@ -79,7 +80,7 @@ Student getHighestGPA(Student arr[], int num){
 
 Student getLowestGPA(Student arr[], int num){
     Student minGPAStudent = arr[0];
-    for(int i = 0; i < num; i++){
+    for(int i = 1; i < num; i++){
         if(arr[i].GPA < minGPAStudent.GPA)
             minGPAStudent = arr[i];
     }
@@ -88,7 +89,7 @@ Student getLowestGPA(Student arr[], int num){
 
 Student getHighestBPGrade(Student arr[], int num){
     Student maxBPGrade = arr[0];
-    for(int i = 0; i < num; i++){
+    for(int i = 1; i < num; i++){
         if(arr[i].BasicProgramming > maxBPGrade.BasicProgramming)
             maxBPGrade = arr[i];
     }
@@ -124,7 +125,12 @@ void printOldestStudent(){
     printf("Student ID: %s\n", findOldestStudent(arr, n).studentID);
     printf("Birthdate: %s\n\n", findOldestStudent(arr, n).birthdate);
 }
-
+                //Task 8: Find the youngest student
+void printYoungestStudent(){
+    printf("The youngest student is: %s\n", findYoungestStudent(arr, n).fullname);
+    printf("Student ID: %s\n", findYoungestStudent(arr, n).studentID);
+    printf("Birthdate: %s\n\n", findYoungestStudent(arr, n).birthdate);
+}
                 //Task 9: Search by StudentID
 void search(Student arr[], int num, char studentID[]){
     int found = 0;
@@ -167,14 +173,14 @@ void printAfterSort(){
 void run(){
     numberStudent();
     enter();
-    // printAsTable();
-    // printToTextFile();
-    // processGrade();
-    // printLastName();
-
+    printAsTable();
+    printToTextFile();
+    processGrade();
+    printLastName();
     printOldestStudent();
-    // searchByID(arr, n, foundID);
-    // printAfterSort();
+    printYoungestStudent();
+    searchByID(arr, n, foundID);
+    printAfterSort();
     
 }
 

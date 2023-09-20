@@ -1,16 +1,8 @@
-#include "FindTheOldestStudent.h"
+#include "FindTheYoungestStudent.h"
 #include <string.h>
 #include <stdlib.h>
 
-void replaceCharsWithSpace(char date[]){
-    for(int i = 0; i < strlen(date); i++) {
-        if (date[i] == '/' || date[i] == '.'){
-            date[i] = ' ';
-        }
-    }
-}
-
-int compareAge(char date1[], char date2[]){
+int compareAgeSmaller(char date1[], char date2[]){
     char date1Copy[100], date2Copy[100];
     strcpy(date1Copy, date1);
     strcpy(date2Copy, date2);
@@ -37,21 +29,24 @@ int compareAge(char date1[], char date2[]){
         n2++;
         d2 = strtok(NULL, " ");
     }
-    
+
+    //Y tuong: dua het so vao 1 mang char, tu cuoi ve dau xong dung strcmp
+
     for(int i = 2; i >= 0; i--){
-        if(tmp1[i] >= tmp2[i])
+        if(tmp1[i] <= tmp2[i]){
             return 0;
+        }
     }
     return 1;
 }
 
-Student findOldestStudent(Student arr[], int num){
-    Student oldestStudent = arr[0];
+Student findYoungestStudent(Student arr[], int num){
+    Student youngestStudent = arr[0];
 
     for(int i = 1; i < num; i++){
-        if(compareAge(arr[i].birthdate, oldestStudent.birthdate) > 0){
-            oldestStudent = arr[i];
+        if(compareAgeSmaller(arr[i].birthdate, youngestStudent.birthdate) > 0){
+            youngestStudent = arr[i];
         }
     }
-    return oldestStudent;
+    return youngestStudent;
 }
