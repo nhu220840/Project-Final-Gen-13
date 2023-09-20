@@ -11,6 +11,7 @@ typedef struct{
 
 int n;
 Student arr[1005];
+char foundID[100];
 
 void numberStudent();
 Student enterInformation();

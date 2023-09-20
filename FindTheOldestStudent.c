@@ -2,6 +2,15 @@
 #include <string.h>
 
 int compareAge(char date1[], char date2[]){
+    for(int i = 0; i < strlen(date1); i++){
+        if(date1[i] == "/" || date1[i] == ".")
+            date1[i] = " ";
+    }
+    for(int i = 0; i < strlen(date2); i++){
+        if(date2[i] == "/" || date2[i] == ".")
+            date2[i] = " ";
+    }
+
     char *d1 = strtok(date1, " ");
     char tmp1[100][100];
     int n1 = 0;
@@ -37,5 +46,4 @@ Student findOldestStudent(Student arr[], int num){
         }
     }
     return oldestStudent;
-
 }
