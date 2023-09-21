@@ -30,14 +30,13 @@ int compareAgeSmaller(char date1[], char date2[]){
         d2 = strtok(NULL, " ");
     }
 
-    //Y tuong: dua het so vao 1 mang char, tu cuoi ve dau xong dung strcmp
-
     for(int i = 2; i >= 0; i--){
-        if(tmp1[i] <= tmp2[i]){
+        if(tmp1[i] < tmp2[i])
             return 0;
-        }
+        else if(tmp1[i] > tmp2[i])
+            return 1;
     }
-    return 1;
+    return 0;
 }
 
 Student findYoungestStudent(Student arr[], int num){

@@ -39,10 +39,12 @@ int compareAge(char date1[], char date2[]){
     }
     
     for(int i = 2; i >= 0; i--){
-        if(tmp1[i] >= tmp2[i])
+        if(tmp1[i] > tmp2[i])
             return 0;
+        else if(tmp1[i] < tmp2[i])
+            return 1;
     }
-    return 1;
+    return 0;
 }
 
 Student findOldestStudent(Student arr[], int num){
