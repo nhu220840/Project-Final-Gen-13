@@ -59,5 +59,6 @@
     "*.cpp": "cpp",
     "findtheoldeststudent.h": "c",
     "string.h": "c"
-  }
+  },
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
