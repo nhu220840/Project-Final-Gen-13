@@ -7,6 +7,8 @@
 #include "FindTheOldestStudent.h"
 #include "FindTheYoungestStudent.h"
 
+//gcc FindTheOldestStudent.c FindTheYoungestStudent.c ProjectFinal.c -o program
+
 int n;
 Student arr[1005];
 char foundID[100];
