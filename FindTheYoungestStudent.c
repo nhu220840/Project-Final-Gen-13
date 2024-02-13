@@ -1,10 +1,9 @@
 #include "FindTheYoungestStudent.h"
 #include "FindTheOldestStudent.h"
-#include "main.h"
 #include <string.h>
 #include <stdlib.h>
 
-int compareAgeSmaller(char date1[], char date2[]){
+int compareAgeYounger(char date1[], char date2[]){
     char date1Copy[100], date2Copy[100];
     strcpy(date1Copy, date1);
     strcpy(date2Copy, date2);
@@ -45,7 +44,7 @@ Student findYoungestStudent(Student arr[], int num){
     Student youngestStudent = arr[0];
 
     for(int i = 1; i < num; i++){
-        if(compareAgeSmaller(arr[i].birthdate, youngestStudent.birthdate) > 0){
+        if(compareAgeYounger(arr[i].birthdate, youngestStudent.birthdate) > 0){
             youngestStudent = arr[i];
         }
     }

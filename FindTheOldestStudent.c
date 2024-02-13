@@ -1,5 +1,4 @@
 #include "FindTheOldestStudent.h"
-#include "main.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -11,7 +10,7 @@ void replaceCharsWithSpace(char date[]){
     }
 }
 
-int compareAge(char date1[], char date2[]){
+int compareAgeOlder(char date1[], char date2[]){
     char date1Copy[100], date2Copy[100];
     strcpy(date1Copy, date1);
     strcpy(date2Copy, date2);
@@ -52,7 +51,7 @@ Student findOldestStudent(Student arr[], int num){
     Student oldestStudent = arr[0];
 
     for(int i = 1; i < num; i++){
-        if(compareAge(arr[i].birthdate, oldestStudent.birthdate) > 0){
+        if(compareAgeOlder(arr[i].birthdate, oldestStudent.birthdate) > 0){
             oldestStudent = arr[i];
         }
     }

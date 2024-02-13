@@ -9,6 +9,10 @@
 
 // gcc FindTheOldestStudent.c FindTheYoungestStudent.c ProjectFinal.c -o program
 
+int n;
+Student arr[1005];
+char foundID[100];
+
                 //Task 1: Enter student number
 void numberStudent(){
     printf("Enter student number: ");
@@ -139,7 +143,7 @@ void search(Student arr[], int num, char studentID[]){
             break;
         }
     }
-    if(found == 0)  printf("There is no matched ID\n");
+    if(found == 0)  printf("No matching ID found\n");
 }
 
 void searchByID(){
@@ -163,24 +167,60 @@ void sortByGPA(Student arr[], int num){
     }
 }
 
-void printAfterSort(){
+void printSortedList(){
     sortByGPA(arr, n);
+    printf("The sorted list is:\n");
     printAsTable();
 }
 
-void run(){
-    numberStudent();
-    enter();
-    printAsTable();
-    printToTextFile();
-    processGrade();
-    printLastName();
-    printOldestStudent();
-    printYoungestStudent();
-    searchByID(arr, n, foundID);
-    printAfterSort();
-}
 
 int main(){
-    run();
+    numberStudent();
+    enter();
+    while(1){
+        printf("--------------------------------------------------------------------------------------\n");
+        printf("1. Print student list as a table to screen\n");
+        printf("2. Print student list as a table to a text file\n");
+        printf("3. Print the student having highest GPA, lowest GPA and highest Basic Programing grade\n");
+        printf("4. Print out student lastName\n");
+        printf("5. Print the oldest student\n");
+        printf("6. Print the youngest student\n");
+        printf("7. Search for student information by ID\n");
+        printf("8. Sort the student list by GPA in descending order\n");
+        printf("0. Exit\n");
+        printf("--------------------------------------------------------------------------------------\n");
+
+        printf("Enter your choice: ");
+        int choice; scanf("%d", &choice);
+        
+        if(choice == 1){
+            printAsTable();
+        }
+        else if(choice == 2){
+            printToTextFile();
+        }
+        else if(choice == 3){
+            processGrade();
+        }
+        else if(choice == 4){
+            printLastName();
+        }
+        else if(choice == 5){
+            printOldestStudent();
+        }
+        else if(choice == 6){
+            printYoungestStudent();
+        }
+        else if(choice == 7){
+            searchByID(arr, n, foundID);
+        }
+        else if(choice == 8){
+            printSortedList();
+        }
+        else{
+            printf("Exit!!!");
+            return 0;
+        }
+    }
+    return 0;
 }

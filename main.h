@@ -26,7 +26,6 @@ void printYoungestStudent();
 void search(Student arr[], int num, char studentID[]);
 void searchByID();
 void sortByGPA(Student arr[], int num);
-void printAfterSort();
-void run();
+void printSortedList();
 
 #endif
