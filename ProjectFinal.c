@@ -178,17 +178,17 @@ int main(){
     numberStudent();
     enter();
     while(1){
-        printf("--------------------------------------------------------------------------------------\n");
-        printf("1. Print student list as a table to screen\n");
-        printf("2. Print student list as a table to a text file\n");
-        printf("3. Print the student having highest GPA, lowest GPA and highest Basic Programing grade\n");
-        printf("4. Print out student lastName\n");
-        printf("5. Print the oldest student\n");
-        printf("6. Print the youngest student\n");
-        printf("7. Search for student information by ID\n");
-        printf("8. Sort the student list by GPA in descending order\n");
-        printf("0. Exit\n");
-        printf("--------------------------------------------------------------------------------------\n");
+        printf("-------------------------------------------------------------------------------------------\n");
+        printf("| 1. Print student list as a table to screen                                              |\n");
+        printf("| 2. Print student list as a table to a text file                                         |\n");
+        printf("| 3. Print the student having highest GPA, lowest GPA and highest Basic Programing grade  |\n");
+        printf("| 4. Print out student lastName                                                           |\n");
+        printf("| 5. Print the oldest student                                                             |\n");
+        printf("| 6. Print the youngest student                                                           |\n");
+        printf("| 7. Search for student information by ID                                                 |\n");
+        printf("| 8. Sort the student list by GPA in descending order                                     |\n");
+        printf("| 0. Exit                                                                                 |\n");
+        printf("-------------------------------------------------------------------------------------------\n");
 
         printf("Enter your choice: ");
         int choice; scanf("%d", &choice);
@@ -198,6 +198,7 @@ int main(){
         }
         else if(choice == 2){
             printToTextFile();
+            printf("Printed to file!!!");
         }
         else if(choice == 3){
             processGrade();
