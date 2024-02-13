@@ -7,11 +7,7 @@
 #include "FindTheOldestStudent.h"
 #include "FindTheYoungestStudent.h"
 
-//gcc FindTheOldestStudent.c FindTheYoungestStudent.c ProjectFinal.c -o program
-
-int n;
-Student arr[1005];
-char foundID[100];
+// gcc FindTheOldestStudent.c FindTheYoungestStudent.c ProjectFinal.c -o program
 
                 //Task 1: Enter student number
 void numberStudent(){
@@ -183,7 +179,6 @@ void run(){
     printYoungestStudent();
     searchByID(arr, n, foundID);
     printAfterSort();
-    
 }
 
 int main(){
