@@ -4,7 +4,7 @@
 typedef struct{
     char studentID[100];
     char fullname[100];
-    char birthdate[100];
+    char birthday[100];
     double Algebra, Calculus, BasicProgramming;
     double GPA;
 } Student;

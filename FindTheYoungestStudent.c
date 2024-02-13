@@ -44,7 +44,7 @@ Student findYoungestStudent(Student arr[], int num){
     Student youngestStudent = arr[0];
 
     for(int i = 1; i < num; i++){
-        if(compareAgeYounger(arr[i].birthdate, youngestStudent.birthdate) > 0){
+        if(compareAgeYounger(arr[i].birthday, youngestStudent.birthday) > 0){
             youngestStudent = arr[i];
         }
     }

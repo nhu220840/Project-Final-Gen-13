@@ -51,7 +51,7 @@ Student findOldestStudent(Student arr[], int num){
     Student oldestStudent = arr[0];
 
     for(int i = 1; i < num; i++){
-        if(compareAgeOlder(arr[i].birthdate, oldestStudent.birthdate) > 0){
+        if(compareAgeOlder(arr[i].birthday, oldestStudent.birthday) > 0){
             oldestStudent = arr[i];
         }
     }

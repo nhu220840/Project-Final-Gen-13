@@ -29,8 +29,8 @@ Student enterInformation(){
     gets(x.studentID);
     printf("Enter your full name: ");
     gets(x.fullname);
-    printf("Enter your birthdate: ");
-    gets(x.birthdate);
+    printf("Enter your birthday: ");
+    gets(x.birthday);
     printf("Enter Algebra, Calculus, Basic Programming grades respectively: ");
     scanf("%lf %lf %lf", &x.Algebra, &x.Calculus, &x.BasicProgramming);
     x.GPA = (x.Algebra + x.Calculus + x.BasicProgramming) / 3.0;
@@ -48,15 +48,15 @@ void enter(){
 
                 //Task 3: Print student list as a table to screen
 void printToScr(Student x){
-    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
-    printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", x.studentID, x.fullname, x.birthdate, x.Algebra, x.Calculus, x.BasicProgramming, x.GPA);
+    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthday", "Algebra", "Calculus", "Basic Programming", "GPA");
+    printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", x.studentID, x.fullname, x.birthday, x.Algebra, x.Calculus, x.BasicProgramming, x.GPA);
     printf("\n");
 }
 
 void printAsTable(){
-    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
+    printf("%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthday", "Algebra", "Calculus", "Basic Programming", "GPA");
     for(int i = 0; i < n; i++){
-        printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthdate, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
+        printf("%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthday, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
     }
     printf("\n");
 }
@@ -66,9 +66,9 @@ void printToTextFile(){
     FILE *f;
     f = fopen("List_of_Students.txt", "w");
     fprintf(f, "LIST OF STUDENTS B1\n\n");
-    fprintf(f, "%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthdate", "Algebra", "Calculus", "Basic Programming", "GPA");
+    fprintf(f, "%-10s | %-20s | %-10s | %-10s | %-10s | %-20s | %-10s |\n", "Student ID", "Full name", "Birthday", "Algebra", "Calculus", "Basic Programming", "GPA");
     for(int i = 0; i < n; i++){
-        fprintf(f, "%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthdate, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
+        fprintf(f, "%-10s | %-20s | %-10s | %-10.2lf | %-10.2lf | %-20.2lf | %-10.2lf |\n", arr[i].studentID, arr[i].fullname, arr[i].birthday, arr[i].Algebra, arr[i].Calculus, arr[i].BasicProgramming, arr[i].GPA);
     }
     fclose(f);
 }
@@ -128,13 +128,13 @@ void printLastName(){
 void printOldestStudent(){
     printf("The oldest student is: %s\n", findOldestStudent(arr, n).fullname);
     printf("Student ID: %s\n", findOldestStudent(arr, n).studentID);
-    printf("Birthdate: %s\n\n", findOldestStudent(arr, n).birthdate);
+    printf("Birthday: %s\n\n", findOldestStudent(arr, n).birthday);
 }
                 //Task 8: Find the youngest student
 void printYoungestStudent(){
     printf("The youngest student is: %s\n", findYoungestStudent(arr, n).fullname);
     printf("Student ID: %s\n", findYoungestStudent(arr, n).studentID);
-    printf("Birthdate: %s\n\n", findYoungestStudent(arr, n).birthdate);
+    printf("Birthday: %s\n\n", findYoungestStudent(arr, n).birthday);
 }
                 //Task 9: Search by StudentID
 void search(Student arr[], int num, char studentID[]){
