@@ -184,7 +184,7 @@ int main(){
         printf("-------------------------------------------------------------------------------------------\n");
         printf("| 1. Print student list as a table to screen                                              |\n");
         printf("| 2. Print student list as a table to a text file                                         |\n");
-        printf("| 3. Print the student having highest GPA, lowest GPA and highest Basic Programing grade  |\n");
+        printf("| 3. Print the student having highest GPA, lowest GPA and highest Basic Programming grade  |\n");
         printf("| 4. Print out student lastName                                                           |\n");
         printf("| 5. Print the oldest student                                                             |\n");
         printf("| 6. Print the youngest student                                                           |\n");
