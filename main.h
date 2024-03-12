@@ -1,6 +1,12 @@
 #ifndef Main_h
 #define Main_h
                 
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdlib.h>
+
 typedef struct{
     char studentID[100];
     char fullname[100];
