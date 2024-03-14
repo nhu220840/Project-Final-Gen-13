@@ -1,6 +1,4 @@
 #include "FindTheOldestStudent.h"
-#include <string.h>
-#include <stdlib.h>
 
 void replaceCharsWithSpace(char date[]){
     for(int i = 0; i < strlen(date); i++) {

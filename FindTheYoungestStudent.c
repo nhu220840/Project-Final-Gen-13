@@ -1,7 +1,5 @@
 #include "FindTheYoungestStudent.h"
 #include "FindTheOldestStudent.h"
-#include <string.h>
-#include <stdlib.h>
 
 int compareAgeYounger(char date1[], char date2[]){
     char date1Copy[100], date2Copy[100];
